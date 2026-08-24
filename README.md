@@ -35,9 +35,21 @@ The dataset includes information such as:
 
 The raw dataset is not included in this repository because of its size.
 
+## Data Cleaning
+
+The dataset was cleaned by identifying and removing invalid or anomalous records, including:
+
+- Negative fare amounts
+- Invalid trip distances
+- Invalid trip durations
+- Unrealistic trip speeds
+- Extreme fare outliers
+
+The cleaned dataset was then used for feature engineering and model development.
+
 ## Features Used
 
-The final model uses:
+The final model uses 14 features:
 
 - `trip_distance`
 - `trip_duration`
@@ -58,11 +70,21 @@ The final model uses:
 
 The first predictive model is a Linear Regression model with preprocessing for numerical and categorical features.
 
-Categorical variables are encoded using One-Hot Encoding, while numerical variables are imputed and standardized.
+Numerical features are:
+
+- Imputed using median values where necessary
+- Standardized using `StandardScaler`
+
+Categorical features are:
+
+- Imputed using the most frequent value
+- Encoded using `OneHotEncoder`
+
+The model is evaluated on a held-out test set.
 
 ## Results
 
-The final model achieved approximately:
+The final Linear Regression model achieved approximately:
 
 | Metric | Score |
 |---|---:|
