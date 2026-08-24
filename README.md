@@ -66,6 +66,12 @@ The final model uses 14 features:
 - `is_weekend`
 - `is_rush_hour`
 
+## Exploratory Analysis
+
+The distributions of fare amount, trip distance, trip duration, and average speed were examined during data exploration.
+
+![EDA Distributions](results/eda_distributions.png)
+
 ## Model
 
 The first predictive model is a Linear Regression model with preprocessing for numerical and categorical features.
@@ -91,6 +97,14 @@ The final Linear Regression model achieved approximately:
 | MAE | 1.66 |
 | RMSE | 3.95 |
 | R² | 0.939 |
+
+### Actual vs Predicted Fare
+
+![Actual vs Predicted Fare](results/actual_vs_predicted.png)
+
+### Residual Analysis
+
+![Residuals vs Actual Fare](results/residuals_vs_actual.png)
 
 The model explains approximately 94% of the variance in fare amount on the test set.
 
